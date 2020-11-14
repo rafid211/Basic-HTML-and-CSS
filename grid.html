@@ -9,12 +9,14 @@
             display: grid;
             /* grid-template-columns: 40% 20% 40%; */
             /* grid-template-columns: 1fr 1fr 1fr; */
-            
+
             grid-template-columns: repeat(3,1fr);
             
             grid-gap:1em;
             /* grid-column-gap: 1em;
             grid-row-gap: 1em; */
+            /* grid-auto-rows: 300px; */
+            grid-auto-rows: minmax(50px,auto);
             
         }
         .wrapper > div{
@@ -23,6 +25,17 @@
         }
         .wrapper >div:nth-child(odd){
             background: #ddd;
+        }
+        .nested{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-auto-rows: 50px;
+            grid-gap:1em;                            
+            
+        }
+        .nested >div{
+            border: 1px solid black;
+            padding: 1em;
         }
     </style>
 </head>
@@ -47,7 +60,16 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic eligendi consequatur, asperiores tempore reiciendis ducimus. Corporis recusandae accusamus a culpa.
 
         </div>
-
+        <div class="nested">
+            <div>nested</div>
+            <div>nested</div>
+            <div>nested</div>
+            <div>nested</div>
+            <div>nested</div>
+            <div>nested</div>
+           
+            
+        </div>
 
     </div>
 </body>
