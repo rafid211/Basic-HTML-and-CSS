@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        
+        .clock{
+            display: flex;
+            
+        }
+        .clock div{
+            position: relative;
+            margin:5px;
+        }
+        .clock div span{
+            position: relative;
+            display:block;
+            width: 200px;
+            height: 100px;
+            background: rgb(45, 125, 245);
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+
+        }
+        .clock div:last-child span{
+            background: rgb(212, 87, 78);
+        }
+        .clock div span:first-child{
+            padding-top: 0.5em;
+            font-size: 5em;
+        }
+        .clock div span:last-child{
+            font-size: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+       
+        function clock(){
+            var hour = document.getElementById('h')
+            var minute = document.getElementById('m')
+            var second = document.getElementById('s');
+            
+            var h = new Date().getHours();
+            var m = new Date().getMinutes();
+            var s = new Date().getSeconds();
+           
+            hour.innerHTML=h;
+            minute.innerHTML=m;
+            second.innerHTML=s;
+        
+         
+        }
+        setInterval(clock,1);
+    </script>
+</head>
+<body>
+    <div class="clock">
+        <div>
+            <span class="hour" id="h">00</span>
+            <span>Hours</span>
+        </div>
+        <div>
+            <span class="minute" id="m">00</span>
+            <span>Minutes</span>
+        </div>
+        <div>
+            <span class="second" id="s">00</span>
+            <span>Seconds</span>
+        </div>
+        
+    </div>
+</body>
+</html>
